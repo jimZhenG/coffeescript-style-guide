@@ -1,10 +1,10 @@
+AnalyticsMD
+----------------------------
+
 # CoffeeScript Style Guide
 
-This guide presents a collection of best-practices and coding conventions for the [CoffeeScript][coffeescript] programming language.
-
-This guide is intended to be community-driven, and contributions are highly encouraged.
-
-Please note that this is a work-in-progress: there is much more that can be specified, and some of the guidelines that have been specified may not be deemed to be idiomatic by the community (in which case, these offending guidelines will be modified or removed, as appropriate).
+This forked guide presents a collection of best-practices and coding conventions for the [CoffeeScript][coffeescript] programming language
+for the AnalyticsMD organization.
 
 ## Inspiration
 
@@ -125,18 +125,18 @@ Additional recommendations:
     - comparisons: `==`, `<`, `>`, `<=`, `>=`, `unless`, etc.
     - arithmetic operators: `+`, `-`, `*`, `/`, etc.
 
-    - _(Do not use more than one space around these operators)_
+    - Use alignment to simplify readability whenever possible
 
         ```coffeescript
            # Yes
-           x = 1
-           y = 1
-           fooBar = 3
+           x      = if this      then that else null
+           y      = if condition then soandso else null
+           fooBar = if neither   then giveup
 
            # No
-           x      = 1
-           y      = 1
-           fooBar = 3
+           x = if this then someLongStatement else someOtherStatement
+           yasdf = if three then not four
+           fooBar = if five then stopCounting
         ```
 
 <a name="comments"/>
@@ -355,7 +355,9 @@ result = (item for item in array when item.name is "test")
 To iterate over the keys and values of objects:
 
 ```coffeescript
-object = one: 1, two: 2
+object = 
+   one: 1, 
+   two: 2
 alert("#{key} = #{value}") for key, value of object
 ```
 
